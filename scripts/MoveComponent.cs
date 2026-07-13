@@ -2,15 +2,22 @@ using Godot;
 
 namespace Armistice.scripts;
 
-public partial class MoveComponent : Node
+public partial class MoveComponent : CharacterBody2D
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	[Export] public float Speed = 300f;
+	
+	public override void _PhysicsProcess(double delta)
 	{
-	}
+		var direction = Vector2.Zero;
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
+		if (Input.IsActionPressed("move_right")) direction.X += 1;
+		if (Input.IsActionPressed("move_left"))  direction.X -= 1;
+		if (Input.IsActionPressed("move_down"))  direction.Y += 1;
+		if (Input.IsActionPressed("move_up"))    direction.Y -= 1;
+		
+		direction = direction.Normalized();
+		
+		Velocity = direction * Speed;
+		MoveAndSlide();
 	}
 }
