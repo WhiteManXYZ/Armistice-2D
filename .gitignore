@@ -1,0 +1,19 @@
+# Godot-specific ignores
+.godot/
+.import/
+/android/
+export_presets.cfg
+
+# Mono/C# specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+[Dd]ebug/
+[Release]/
+bld/
+bin/
+obj/
+
+# JetBrains Rider specific ignores
+.idea/
+*.sln.DotSettings.user
