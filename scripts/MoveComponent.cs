@@ -2,12 +2,24 @@ using Godot;
 
 namespace Armistice.scripts;
 
-public partial class MoveComponent : CharacterBody2D
+public partial class MoveComponent : Node
 {
 	[Export] public float Speed = 300f;
-	
+	private CharacterBody2D _characterBody;
+
+	public override void _Ready()
+	{
+		
+		_characterBody = GetParent<CharacterBody2D>();
+		
+		if (_characterBody == null)
+			GD.PrintErr("MoveComponent: parent must be CharacterBody2D!");
+	}
+
 	public override void _PhysicsProcess(double delta)
 	{
+		if (_characterBody == null) return;
+		
 		var direction = Vector2.Zero;
 
 		if (Input.IsActionPressed("move_right")) direction.X += 1;
@@ -17,7 +29,7 @@ public partial class MoveComponent : CharacterBody2D
 		
 		direction = direction.Normalized();
 		
-		Velocity = direction * Speed;
-		MoveAndSlide();
+		_characterBody.Velocity = direction * Speed;
+		_characterBody.MoveAndSlide();
 	}
 }

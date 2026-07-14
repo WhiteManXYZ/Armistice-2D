@@ -11,10 +11,12 @@ size = Vector2(65, 64)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=480427204]
 position = Vector2(554, 339)
-script = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=104526362]
 shape = SubResource("RectangleShape2D_qbdty")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=25742444]
 texture = SubResource("DrawableTexture2D_v5gy4")
+
+[node name="MoveComponent" type="Node" parent="." unique_id=1948674759]
+script = ExtResource("1_4flbx")
