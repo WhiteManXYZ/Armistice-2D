@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://b54iah5g2ml7a"]
 
-[ext_resource type="Script" uid="uid://3fnqmsbf74ow" path="res://scripts/MoveComponent.cs" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://ciafnmdt3ltyd" path="res://scripts/AimComponent.cs" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://3fnqmsbf74ow" path="res://scripts/CharacterComponents/MoveComponent.cs" id="1_i3pqv"]
+[ext_resource type="Script" uid="uid://ciafnmdt3ltyd" path="res://scripts/CharacterComponents/AimComponent.cs" id="2_hqtel"]
+[ext_resource type="Script" uid="uid://bl1pgs2faljbv" path="res://scripts/CharacterComponents/HealthComponent.cs" id="3_sweqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbdty"]
 size = Vector2(65, 64)
@@ -20,8 +21,10 @@ shape = SubResource("RectangleShape2D_qbdty")
 texture = SubResource("DrawableTexture2D_v5gy4")
 
 [node name="MoveComponent" type="Node" parent="CharacterBody2D" unique_id=1948674759]
-script = ExtResource("1_4flbx")
+script = ExtResource("1_i3pqv")
 
 [node name="AimComponent" type="Node" parent="CharacterBody2D" unique_id=657217564]
-script = ExtResource("2_onrkg")
-UseExperimentalAim = false
+script = ExtResource("2_hqtel")
+
+[node name="HealthComponent" type="Node" parent="CharacterBody2D" unique_id=227623559]
+script = ExtResource("3_sweqy")
