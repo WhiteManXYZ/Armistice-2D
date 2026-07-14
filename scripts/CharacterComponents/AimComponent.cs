@@ -1,6 +1,6 @@
 using Godot;
 
-namespace Armistice.scripts;
+namespace Armistice.scripts.CharacterComponents;
 
 public partial class AimComponent : Node
 {
