@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b54iah5g2ml7a"]
 
 [ext_resource type="Script" uid="uid://3fnqmsbf74ow" path="res://scripts/MoveComponent.cs" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://ciafnmdt3ltyd" path="res://scripts/AimComponent.cs" id="2_onrkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbdty"]
 size = Vector2(65, 64)
@@ -18,5 +19,9 @@ shape = SubResource("RectangleShape2D_qbdty")
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=25742444]
 texture = SubResource("DrawableTexture2D_v5gy4")
 
-[node name="MoveComponent" type="Node" parent="." unique_id=1948674759]
+[node name="MoveComponent" type="Node" parent="CharacterBody2D" unique_id=1948674759]
 script = ExtResource("1_4flbx")
+
+[node name="AimComponent" type="Node" parent="CharacterBody2D" unique_id=657217564]
+script = ExtResource("2_onrkg")
+UseExperimentalAim = false
