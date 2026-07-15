@@ -28,3 +28,5 @@ script = ExtResource("2_hqtel")
 
 [node name="HealthComponent" type="Node" parent="CharacterBody2D" unique_id=227623559]
 script = ExtResource("3_sweqy")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=2040058408]
