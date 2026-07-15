@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Armistice"
-run/main_scene="uid://b54iah5g2ml7a"
+run/main_scene="uid://ch8suy0j4vmhl"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
